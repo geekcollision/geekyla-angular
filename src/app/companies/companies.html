@@ -1,12 +1,7 @@
-<h3>Todo</h3>
-<ul class="todo-list">
-  <li class="todo-item" ng-repeat="todo in todos" ng-class="{'todo-done': todo.isDone}">
-    <label><input type="checkbox" ng-click="check()" ng-model="todo.isDone"/>&nbsp;{{todo.label}}</label>
-  </li>
-  <li class="todo-item">
-    <form ng-submit="add()">
-      <input type="text" placeholder="New item..." ng-model="label"/>
-      <button type="submit" ng-disabled="posting || !label">Add</button>
-    </form>
-  </li>
+<h3>Companies</h3>
+<ul class="company-list">
+    <li class="company-item" ng-repeat="company in companies">
+        <div class="name"><a href="{{company.homepage}}">{{company.company}}</a></div>
+        <div class="does">{{company.does}}</div>
+    </li>
 </ul>

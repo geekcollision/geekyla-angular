@@ -1,22 +1,12 @@
-angular
-  .module('slushAngular.companies')
-  .controller('CompaniesCtrl', function ($scope, $window) {
-    'use strict';
-    $scope.todos = JSON.parse($window.localStorage.getItem('todos') || '[]');
-    $scope.$watch('todos', function (newTodos, oldTodos) {
-      if (newTodos !== oldTodos) {
-        $window.localStorage.setItem('todos', JSON.stringify(angular.copy($scope.todos)));
-      }
-    }, true);
+'use strict';
 
-    $scope.add = function () {
-      var todo = {label: $scope.label, isDone: false};
-      $scope.todos.push(todo);
-      $window.localStorage.setItem('todos', JSON.stringify(angular.copy($scope.todos)));
-      $scope.label = '';
-    };
+angular.module('slushAngular.companies')
+    .controller('CompaniesCtrl', function($scope, $http) {
+    var url = 'http://it2rest.herokuapp.com/api/v1/companies';
 
-    $scope.check = function () {
-      this.todo.isDone = !this.todo.isDone;
-    };
-  });
+    $scope.companies = [];
+
+    $http.get(url).then(function(res) {
+        $scope.companies = res.data;
+    });
+});
