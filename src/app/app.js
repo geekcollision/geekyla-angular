@@ -2,6 +2,8 @@
 
 angular.module('slushAngular', [
     'ngRoute',
+    'slushAngular.companies',
+    'slushAngular.geeks',
     'slushAngular.todo',
     'slush-angular-templates'
 ]).config(function ($routeProvider) {
