@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('slushAngular', [
-    'ngRoute',
+    'ngRoute', // ui-router
     'slushAngular.companies',
     'slushAngular.geeks',
     'slushAngular.todo',

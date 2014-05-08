@@ -1,12 +1,12 @@
-<h3>Todo</h3>
-<ul class="todo-list">
-  <li class="todo-item" ng-repeat="todo in todos" ng-class="{'todo-done': todo.isDone}">
-    <label><input type="checkbox" ng-click="check()" ng-model="todo.isDone"/>&nbsp;{{todo.label}}</label>
-  </li>
-  <li class="todo-item">
-    <form ng-submit="add()">
-      <input type="text" placeholder="New item..." ng-model="label"/>
-      <button type="submit" ng-disabled="posting || !label">Add</button>
-    </form>
-  </li>
+<h3>Geeks</h3>
+
+<div>
+    <input class="form-control input-lg" type="text" ng-model="search.nick" ng-keydown="limit=10" autofocus placeholder="Search">
+</div>
+
+<ul class="geek-list">
+    <li class="geek-item" ng-repeat="geek in geeks | filter:search">
+        <img src="http://www.gravatar.com/avatar/{{geek.gravatar_id}}" />
+        <div class="nick"><a href="{{geek.blog}}">{{geek.nick}}</a></div>
+    </li>
 </ul>

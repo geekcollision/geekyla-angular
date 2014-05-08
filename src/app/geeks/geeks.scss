@@ -5,8 +5,11 @@
   padding: 0;
 }
 
-.todo-item {
-  padding: 0.5em;
+.geek-item {
+    padding: 2em;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .todo-done {
