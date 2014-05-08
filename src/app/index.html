@@ -4,12 +4,13 @@
     <meta charset="utf-8"/>
     <title>slushAngular</title>
     <!-- inject:vendor:css -->
+    <link rel="stylesheet" href="/fullcalendar/fullcalendar.css">
     <!-- endinject -->
     <!-- inject:css -->
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/calendar/calendar.css">
     <link rel="stylesheet" href="/css/companies/companies.css">
     <link rel="stylesheet" href="/css/geeks/geeks.css">
-    <link rel="stylesheet" href="/css/todo/todo.css">
     <!-- endinject -->
   </head>
   <body>
@@ -20,16 +21,20 @@
     <!-- inject:vendor:js -->
     <script src="/angular/angular.js"></script>
     <script src="/angular-route/angular-route.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="/fullcalendar/fullcalendar.js"></script>
+    <script src="/angular-ui-calendar/src/calendar.js"></script>
     <!-- endinject -->
     <!-- inject:js -->
+    <script src="/calendar/calendar.js"></script>
     <script src="/companies/companies.js"></script>
     <script src="/geeks/geeks.js"></script>
     <script src="/slush-angular-templates.js"></script>
-    <script src="/todo/todo.js"></script>
     <script src="/app.js"></script>
+    <script src="/calendar/calendar-controller.js"></script>
     <script src="/companies/companies-controller.js"></script>
     <script src="/geeks/geeks-controller.js"></script>
-    <script src="/todo/todo-controller.js"></script>
     <!-- endinject -->
   </body>
 </html>

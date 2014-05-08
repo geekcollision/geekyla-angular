@@ -4,12 +4,12 @@ angular.module('slushAngular', [
     'ngRoute', // ui-router
     'slushAngular.companies',
     'slushAngular.geeks',
-    'slushAngular.todo',
+    'slushAngular.calendar',
     'slush-angular-templates'
 ]).config(function ($routeProvider) {
-    $routeProvider.when('/todo', {
-        controller: 'TodoCtrl',
-        templateUrl: '/slush-angular/todo/todo.html'
+    $routeProvider.when('/', {
+        controller: 'CalendarCtrl',
+        templateUrl: '/slush-angular/calendar/calendar.html'
     }).when('/geeks', {
         controller: 'GeeksCtrl',
         templateUrl: '/slush-angular/geeks/geeks.html'
@@ -17,6 +17,6 @@ angular.module('slushAngular', [
         controller: 'CompaniesCtrl',
         templateUrl: '/slush-angular/companies/companies.html'
     }).otherwise({
-        redirectTo: '/todo'
+        redirectTo: '/'
     });
 });
