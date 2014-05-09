@@ -7,7 +7,7 @@ angular.module('slushAngular', [
     'slushAngular.calendar',
     'slush-angular-templates',
 ]).config(function ($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider.when('/events', {
         controller: 'CalendarCtrl',
         templateUrl: '/slush-angular/calendar/calendar.html'
     }).when('/geeks', {
@@ -17,6 +17,6 @@ angular.module('slushAngular', [
         controller: 'CompaniesCtrl',
         templateUrl: '/slush-angular/companies/companies.html'
     }).otherwise({
-        redirectTo: '/'
+        redirectTo: '/events'
     });
 });
