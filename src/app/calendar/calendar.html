@@ -1,1 +1,14 @@
-<h3>Calendar</h3>
+<h3>Events</h3>
+
+<div>
+    <input class="form-control input-lg" type="text" ng-model="search.title" ng-keydown="limit=10" autofocus placeholder="Search">
+</div>
+
+<ul class="event-list">
+    <li class="event-item" ng-repeat="event in events | filter:search">
+        <div class="event-title">{{event.title}}</div>
+        <div class="event-when">{{event.when}}</div>
+        <div class="event-where">{{event.where}}</div>
+        <div class="event-description">{{event.description}}</div>
+    </li>
+</ul>

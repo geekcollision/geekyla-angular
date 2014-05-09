@@ -5,7 +5,7 @@ angular.module('slushAngular', [
     'slushAngular.companies',
     'slushAngular.geeks',
     'slushAngular.calendar',
-    'slush-angular-templates'
+    'slush-angular-templates',
 ]).config(function ($routeProvider) {
     $routeProvider.when('/', {
         controller: 'CalendarCtrl',
