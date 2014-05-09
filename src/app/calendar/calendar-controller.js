@@ -10,8 +10,6 @@ angular.module('slushAngular.calendar').controller('CalendarCtrl', function($sco
     $http.get(url).then(function(res) {
         var events = res.data.feed.entry;
 
-        console.log(events);
-
         $scope.events = events.map(function(entry) {
             var content = entry.content.$t;
 
@@ -30,7 +28,5 @@ angular.module('slushAngular.calendar').controller('CalendarCtrl', function($sco
                 }
             }
         });
-
-        console.log($scope.events);
     });
 });
