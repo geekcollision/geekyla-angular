@@ -1,5 +1,6 @@
-slush-angular
-============
+# geekyla-angular
+
+This is a little demo showing how to build a small geeky site using Angular. It's very crude etc. but enough to get started with something more serious.
 
 ## Development
 
