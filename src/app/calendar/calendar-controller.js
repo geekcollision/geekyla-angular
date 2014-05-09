@@ -3,8 +3,6 @@
 angular.module('slushAngular.calendar').controller('CalendarCtrl', function($scope, $http) {
     var url = 'http://www.google.com/calendar/feeds/8k5oi1dne96kpvqtr4ebljsi0k@group.calendar.google.com/public/basic?alt=json';
 
-    console.log('at ctrl');
-
     $scope.events = [];
 
     $http.get(url).then(function(res) {
