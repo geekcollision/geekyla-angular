@@ -1,5 +1,5 @@
 {
-  "name": "slush-angular",
+  "name": "geekyla-angular",
   "main": [
     "/dist/slush-angular.min.js",
     "/dist/slush-angular.min.css"
