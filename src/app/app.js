@@ -2,6 +2,7 @@
 
 angular.module('slushAngular', [
     'ngRoute', // ui-router
+    'masonry',
     'slushAngular.companies',
     'slushAngular.geeks',
     'slushAngular.geek',
