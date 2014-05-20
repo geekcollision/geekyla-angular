@@ -14,7 +14,7 @@ angular.module('slushAngular.calendar').controller('CalendarCtrl', function($sco
             return {
                 title: entry.title.$t,
                 when: content.split('When: ')[1].split('<br />')[0],
-                where: parseWhere(content),
+                where: parseWhere(content).replace(/&#39;/g, '\''),
                 description: content.split('Event Description: ')[1]
             };
 
@@ -24,6 +24,8 @@ angular.module('slushAngular.calendar').controller('CalendarCtrl', function($sco
                 if(parts.length > 1) {
                     return parts[1].split('<br />')[0];
                 }
+
+                return '';
             }
         });
     });
