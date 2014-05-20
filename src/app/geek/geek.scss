@@ -1,0 +1,19 @@
+
+.todo-list {
+  list-style: none;
+  text-indent: 0;
+  padding: 0;
+}
+
+.geek-item {
+    padding: 2em;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.todo-done {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #999;
+}
