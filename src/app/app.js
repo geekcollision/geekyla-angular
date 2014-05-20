@@ -5,7 +5,8 @@ angular.module('slushAngular', [
     'slushAngular.companies',
     'slushAngular.geeks',
     'slushAngular.geek',
-    'slushAngular.calendar'
+    'slushAngular.calendar',
+    'slushAngular.services'
 ]).config(function ($routeProvider) {
     $routeProvider.when('/events', {
         controller: 'CalendarCtrl',
@@ -14,17 +15,8 @@ angular.module('slushAngular', [
         controller: 'GeekCtrl',
         templateUrl: '/geek/geek.html',
         resolve: {
-            geek: function($q, $http, $route) {
-                var nick = $route.current.params.nick;
-
-                var url = 'http://jklgeeks.herokuapp.com/api/v1/geeks?nick=' + nick;
-                var q = $q.defer();
-
-                $http.get(url).then(function(res) {
-                    q.resolve(res.data[0]);
-                });
-
-                return q.promise;
+            geek: function($route, GeekService) {
+                return GeekService.get({nick: $route.current.params.nick});
             }
         }
     })
@@ -32,15 +24,8 @@ angular.module('slushAngular', [
         controller: 'GeeksCtrl',
         templateUrl: '/geeks/geeks.html',
         resolve: {
-            geeks: function($q, $http) {
-                var url = 'http://jklgeeks.herokuapp.com/api/v1/geeks';
-                var q = $q.defer();
-
-                $http.get(url).then(function(res) {
-                    q.resolve(res.data);
-                });
-
-                return q.promise;
+            geeks: function(GeekService) {
+                return GeekService.get();
             }
         }
     }).when('/companies', {

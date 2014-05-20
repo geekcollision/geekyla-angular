@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('slushAngular.geek').controller('GeekCtrl', function($scope, $routeParams, geek) {
+angular.module('slushAngular.geek').controller('GeekCtrl', function($scope, geek) {
     $scope.geek = geek;
 });
