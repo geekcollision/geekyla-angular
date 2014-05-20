@@ -8,9 +8,7 @@ angular.module('slushAngular.services').factory('GeekService',[
                 var url = 'http://jklgeeks.herokuapp.com/api/v1/geeks';
                 var q = $q.defer();
 
-                $http({
-                    url: url,
-                    method: 'GET',
+                $http.get(url, {
                     params: params
                 }).then(function(res) {
                     q.resolve(params? res.data[0]: res.data);
