@@ -7,7 +7,7 @@ angular.module('slushAngular', [
     'slushAngular.geek',
     'slushAngular.calendar',
     'slushAngular.services'
-]).config(function ($routeProvider) {
+]).config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/events', {
         controller: 'CalendarCtrl',
         templateUrl: '/calendar/calendar.html'
@@ -34,4 +34,6 @@ angular.module('slushAngular', [
     }).otherwise({
         redirectTo: '/events'
     });
+
+    $locationProvider.html5Mode(false);
 });
