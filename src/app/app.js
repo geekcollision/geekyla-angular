@@ -6,7 +6,8 @@ angular.module('slushAngular', [
     'slushAngular.geeks',
     'slushAngular.geek',
     'slushAngular.calendar',
-    'slushAngular.services'
+    'slushAngular.services',
+    'slushAngular.directives'
 ]).config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/events', {
         controller: 'CalendarCtrl',

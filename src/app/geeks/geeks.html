@@ -4,9 +4,4 @@
     <input class="form-control input-lg" type="text" ng-model="search.nick" ng-keydown="limit=10" autofocus placeholder="Search">
 </div>
 
-<ul class="geek-list">
-    <li class="geek-item" ng-repeat="geek in geeks | filter:search">
-        <img ng-click="go(geek.nick)" src="http://www.gravatar.com/avatar/{{geek.gravatar_id}}" />
-        <div class="nick"><a href="{{geek.blog}}">{{geek.nick}}</a></div>
-    </li>
-</ul>
+<geek-list search="search" geeks="geeks"></geek-list>
