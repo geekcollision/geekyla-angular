@@ -18,19 +18,31 @@ angular.module('slushAngular', [
                 var nick = $route.current.params.nick;
 
                 var url = 'http://jklgeeks.herokuapp.com/api/v1/geeks?nick=' + nick;
-                var delay = $q.defer();
+                var q = $q.defer();
 
                 $http.get(url).then(function(res) {
-                    delay.resolve(res.data[0]);
+                    q.resolve(res.data[0]);
                 });
 
-                return delay.promise;
+                return q.promise;
             }
         }
     })
     .when('/geeks/', {
         controller: 'GeeksCtrl',
-        templateUrl: '/geeks/geeks.html'
+        templateUrl: '/geeks/geeks.html',
+        resolve: {
+            geeks: function($q, $http) {
+                var url = 'http://jklgeeks.herokuapp.com/api/v1/geeks';
+                var q = $q.defer();
+
+                $http.get(url).then(function(res) {
+                    q.resolve(res.data);
+                });
+
+                return q.promise;
+            }
+        }
     }).when('/companies', {
         controller: 'CompaniesCtrl',
         templateUrl: '/companies/companies.html'
