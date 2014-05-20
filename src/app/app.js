@@ -4,18 +4,17 @@ angular.module('slushAngular', [
     'ngRoute', // ui-router
     'slushAngular.companies',
     'slushAngular.geeks',
-    'slushAngular.calendar',
-    'slush-angular-templates',
+    'slushAngular.calendar'
 ]).config(function ($routeProvider) {
     $routeProvider.when('/events', {
         controller: 'CalendarCtrl',
-        templateUrl: '/slush-angular/calendar/calendar.html'
+        templateUrl: '/calendar/calendar.html'
     }).when('/geeks', {
         controller: 'GeeksCtrl',
-        templateUrl: '/slush-angular/geeks/geeks.html'
+        templateUrl: '/geeks/geeks.html'
     }).when('/companies', {
         controller: 'CompaniesCtrl',
-        templateUrl: '/slush-angular/companies/companies.html'
+        templateUrl: '/companies/companies.html'
     }).otherwise({
         redirectTo: '/events'
     });
