@@ -7,11 +7,6 @@ angular.module('slushAngular.directives').directive('geekList', function() {
         scope: {
             search: '=',
             geeks: '='
-        },
-        controller: function($scope, $location) {
-            $scope.go = function(nick) {
-                $location.path('geeks/' + nick);
-            };
         }
     };
 });
