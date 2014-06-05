@@ -1,5 +1,5 @@
-<div masonry='{ "transitionDuration" : "0.4s" , "itemSelector" : ".tile"}'>
-    <div class="tile" masonry-tile ng-repeat="geek in geeks | filter:search">
+<div class="geek-list" data-masonry='{ "transitionDuration" : "0.4s" , "itemSelector" : ".tile"}'>
+    <div class="tile" masonry-tile ng-repeat="geek in geeks | filter: search | orderBy: 'nick'">
         <geek geek="geek"></geek>
     </div>
 </div>

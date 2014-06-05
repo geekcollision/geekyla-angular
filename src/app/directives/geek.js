@@ -4,13 +4,17 @@ angular.module('slushAngular.directives').directive('geek', function() {
     return {
         restrict: 'E',
         templateUrl: '/directives/geek.html',
+        replace: true,
         scope: {
             geek: '='
         },
-        controller: function($scope, $location) {
-            $scope.go = function(nick) {
-                $location.path('geeks/' + nick);
-            };
-        }
+        controller: [
+            '$scope', '$location',
+            function($scope, $location) {
+                $scope.go = function(nick) {
+                    $location.path('geeks/' + nick);
+                };
+            }
+        ]
     };
 });

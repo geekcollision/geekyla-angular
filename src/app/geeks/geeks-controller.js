@@ -1,5 +1,9 @@
 'use strict';
 
-angular.module('slushAngular.geeks').controller('GeeksCtrl', function($scope, geeks) {
-    $scope.geeks = geeks;
-});
+angular.module('slushAngular.geeks')
+    .controller('GeeksCtrl', [
+        '$scope', 'geeks',
+        function($scope, geeks) {
+            $scope.geeks = geeks;
+        }
+    ]);
